@@ -1,25 +1,32 @@
-import logo from './logo.svg';
+import React, { Component } from 'react'
 import './App.css';
+import ClickCounter from './components/ClickCounter';
+import Counter from './components/Counter';
+import HoverCounter from './components/HoverCounter'
+import LikeCounter from './components/LikeCounter'
+// import User from './components/User';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  render(){
+    return (
+      <div className="App">
+        <Counter render = { (count, incrementCount) => (
+        <ClickCounter count={count} incrementCount= {incrementCount}>
+        </ClickCounter>)}/>
+
+        <Counter render = { (count, incrementCount) => (
+        <HoverCounter count={count} incrementCount= {incrementCount}>
+        </HoverCounter>)}/>
+
+        <Counter render = { (count, incrementCount) => (
+        <LikeCounter count={count} incrementCount= {incrementCount}>
+        </LikeCounter>)}/>
+
+        {/* <User/> */}
+      </div>
+    );
+  }
 }
+
 
 export default App;
