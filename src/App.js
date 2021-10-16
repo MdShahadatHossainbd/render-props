@@ -4,6 +4,7 @@ import ClickCounter from './components/ClickCounter';
 import Counter from './components/Counter';
 import HoverCounter from './components/HoverCounter'
 import LikeCounter from './components/LikeCounter'
+import HahaCounter from './components/HahaCounter'
 // import User from './components/User';
 
 class App extends Component {
@@ -21,6 +22,10 @@ class App extends Component {
         <Counter render = { (count, incrementCount) => (
         <LikeCounter count={count} incrementCount= {incrementCount}>
         </LikeCounter>)}/>
+
+        <Counter render = { (count, incrementCount) => (
+        <HahaCounter count={count} incrementCount= {incrementCount}>
+        </HahaCounter>)}/>
 
         {/* <User/> */}
       </div>
